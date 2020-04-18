@@ -17,8 +17,9 @@ jobs:
       - run: 
           name: Deploy Docs
           command: |
-            pwd
-            ls build/html 
+            ls
+            ls docs
+            ls docs build/html 
           # command: |
           #   echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
           #   gcloud --quiet config set project $GOOGLE_PROJECT_ID
