@@ -17,10 +17,12 @@ jobs:
       - run: 
           name: Deploy Docs
           command: |
-            echo $SA_KEY | gcloud auth activate-service-account --key-file=-
-            gcloud config set project $PROJECT_ID
-            gcloud config set compute/region $REGION
-            gcloud app deploy
+            echo ${GCLOUD_SERVICE_KEY} > sa_key.json
+            ls sa_key.json
+            export GCLOUD_SERVICE_KEY_FILE=sa_key.json
+            echo $GCLOUD_SERVICE_KEY_FILE | gcloud auth activate-service-account --key-file=-
+            gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+            gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
 
 workflows:
   version: 2
