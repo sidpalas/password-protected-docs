@@ -8,6 +8,7 @@ https://console.developers.google.com/apis/api/appengine.googleapis.com/
 ## Service Account Permissions
 
 - App Engine Deployer
+- App Engine Service Admin
 - Cloud Build Service Account
 - Storage Object Creator
 - Storage Object Viewer
