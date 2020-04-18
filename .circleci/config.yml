@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  deploy_docs:     
+  build_and_deploy:     
     docker:
         - image: google/cloud-sdk
     steps:
@@ -21,3 +21,9 @@ jobs:
       #       gcloud --quiet config set project $GOOGLE_PROJECT_ID
       #       gcloud --quiet config set compute/zone $GOOGLE_COMPUTE_ZONE
       #       gcloud app deploy
+
+workflows:
+  verison: 2
+  build_and_deploy:
+    jobs:
+      build_and_deploy
